@@ -7,7 +7,7 @@ module "ecr" {
   namespace              = var.namespace
   stage                  = var.stage
   name                   = var.name
-  image_names            = ["test-go", "test.php"]
+  image_names            = ["test-go", "test-php"]
   principals_full_access = [aws_iam_role.ecr_admin_role.arn]
   tags                   = local.tags
 
