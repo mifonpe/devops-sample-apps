@@ -42,7 +42,7 @@ spec:
   metadata:
     annotations:
       kubernetes.io/ingress.class: nginx
-  name: ingress-go            
+    name: ingress-go            
   spec:
     rules:
     - http:
