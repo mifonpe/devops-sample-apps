@@ -2,8 +2,6 @@ FROM bitnami/php-fpm:7.1 as builder
 MAINTAINER Miguel Fontanilla "mifonpe@gmail.com"
 
 ENV APP_ENV="prod"
-
-RUN mkdir /app 
 COPY index.php /app
 COPY config.${APP_ENV} /app/config
 WORKDIR /app
