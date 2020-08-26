@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: go
-        image: 175986030077.dkr.ecr.eu-west-1.amazonaws.com/pagantis-app1:e1e8658c4dc3b27bf52b341e85b530ce6868609e
+        image: 019496914213.dkr.ecr.us-east-2.amazonaws.com/test-go:latest
         ports:
         - containerPort: 5000
 ---
