@@ -42,7 +42,7 @@ spec:
   metadata:
     annotations:
       kubernetes.io/ingress.class: nginx
-  name: ingress-php            
+    name: ingress-php            
   spec:
     rules:
     - http:
