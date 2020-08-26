@@ -1,3 +1,7 @@
+provider "aws" {
+  region = "us-east-2"
+}
+
 module "ecr" {
   source                 = "git::https://github.com/cloudposse/terraform-aws-ecr.git?ref=master"
   namespace              = var.namespace
