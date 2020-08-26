@@ -44,11 +44,11 @@ spec:
       kubernetes.io/ingress.class: nginx
   name: ingress-php            
   spec:
-  rules:
-  - http:
-      paths:
-      - path: /api/v2
-        pathType: Prefix
-        backend:
-          serviceName: svc-php
-          servicePort: 80
+    rules:
+    - http:
+        paths:
+        - path: /api/v2
+          pathType: Prefix
+          backend:
+            serviceName: svc-php
+            servicePort: 80
