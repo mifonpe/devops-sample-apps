@@ -4,6 +4,7 @@
   metadata:
     annotations:
       kubernetes.io/ingress.class: nginx
+      ingress.kubernetes.io/rewrite-target: /
     name: ingress-apps           
   spec:
     rules:
