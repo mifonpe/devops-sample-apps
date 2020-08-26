@@ -1,21 +1,21 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: app1-deployment
+  name: test-go
   labels:
-    app: app1
+    app: go
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: app1
+      app: go
   template:
     metadata:
       labels:
-        app: app1
+        app: go
     spec:
       containers:
-      - name: app1
+      - name: go
         image: 175986030077.dkr.ecr.eu-west-1.amazonaws.com/pagantis-app1:e1e8658c4dc3b27bf52b341e85b530ce6868609e
         ports:
         - containerPort: 5000
@@ -24,16 +24,16 @@ spec:
   kind: Service
   metadata:
     labels:
-      app: app1
-    name: svc-app1
+      app: go
+    name: svc-go
   spec:
     ports:
     - name: http
       port: 80
       protocol: TCP
-      targetPort: 5000
+      targetPort: 80
     selector:
-      app: app1
+      app: go
     type: ClusterIP
 
 ---
@@ -41,14 +41,14 @@ spec:
   kind: Ingress
   metadata:
     annotations:
-      kubernetes.io/ingress.class: traefik
-    name: ingress-app1
+      kubernetes.io/ingress.class: nginx
+    name: ingress-go
   spec:
     rules:
-    - host: pagantis.app1.com
+    - host: *
       http:
         paths:
-        - path: /
+        - path: /api/v1
           backend:
-            serviceName: svc-app1
+            serviceName: svc-go
             servicePort: 80
